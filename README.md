@@ -28,6 +28,13 @@ No entanto, `./Data/Images/` está vazio e os dados devem ser baixados a partir 
 # Notebooks
 Todos os notebooks cumprem uma função muito específica que faz jus ao seu nome. Também possuem _logs_ que saem na tela do usuário monitorando a atividade desempenhada. Possuem poucos comentários, mas as variáveis e a estrutura limpa do código facilitam em muito a legibilidade.
 
+## Autoencoder
+Código para criar, treinar e salvar modelo.
+
+> Input: `./Data/Images/Data Cubes/[Train, Test, Val]/Data_Cube[\d+].zarr`
+>
+> Output: `./Model/AutoEncoder [epoch].pth`
+
 ## Create NDMI
 Código para criar a banda NDMI, não disponível nativa para _download_ pelo STAC do INPE.
 
@@ -62,6 +69,20 @@ Código para unir os diversos _assets_ dos itens em uma única iamgem. Devido à
 > Input: `./Data/Images/Items/[Tile]/[Date]/[Asset].tif`
 >
 > Output: `./Data/Images/Tiles/[Tile]/[Date]/Tile.tif`
+
+## Latent Mosaic
+Código para juntar os _patches_ do espaço latente em um único mosaico.
+
+> Input: `./Data/Images/Latent Patches/Latent_Patch_[\d+].tif`
+>
+> Output: `./Data/Images/Latent Mosaic/Latent_Mosaic.tif`
+
+## Latent Patches
+Código para ler todos os cubos de dados e extrair seus valores no espaço latente.
+
+> Input> `./Data/Images/Data Cubes/[Train, Test, Val]/Data_Cube_[\d+].zarr`
+>
+> Output: `./Data/Images/Latent Patches/Latent_Patch_[\d+].tif`
 
 ## Mosaics
 Código para unir todos os _tiles_ da área de interesse em um único arquivo, facilitando o processamento dos _patches_ que viria em seguida.
